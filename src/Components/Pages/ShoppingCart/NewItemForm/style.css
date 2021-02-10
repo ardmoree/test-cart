@@ -1,0 +1,14 @@
+.newItemForm {
+    background-color: #ffffff;
+    border-radius: 4px;
+    max-width: 800px;
+    margin: 70px auto 0 ;
+    display: flex;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.field {
+    flex: 1;
+    margin-right: 7px;
+}
