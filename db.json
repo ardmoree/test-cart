@@ -1,0 +1,13 @@
+{
+  "items": [{"id":1,"name":"Tomatoes","price":36.6,"quantity":8,
+    "pic": "https://static06.vprok.ru/src/product.file/list/image/02/20/202002.jpeg"
+  },
+    {"id":2,"name":"Soy sauce","price":37.9,"quantity":7,
+      "pic": "https://static00.vprok.ru/src/product.file/list/image/79/29/2979.jpeg"
+    },
+    {"id":3,"name":"Cranberries","price":82.9,"quantity":7,
+      "pic": "https://static02.vprok.ru/src/product.file/list/image/63/62/126263.jpeg"
+    },
+    {"id":4,"name":"Milk","price":91.5,"quantity":1, "pic": "https://static01.vprok.ru/src/product.file/list/image/25/67/266725.jpeg"},
+    {"id":5,"name":"Potatoes","price":47.7,"quantity":2, "pic":  "https://static07.vprok.ru/src/product.file/list/image/39/97/159739.jpeg"}]
+}
