@@ -8,6 +8,5 @@
     {"id":3,"name":"Cranberries","price":82.9,"quantity":7,
       "pic": "https://static02.vprok.ru/src/product.file/list/image/63/62/126263.jpeg"
     },
-    {"id":4,"name":"Milk","price":91.5,"quantity":1, "pic": "https://static01.vprok.ru/src/product.file/list/image/25/67/266725.jpeg"},
     {"id":5,"name":"Potatoes","price":47.7,"quantity":2, "pic":  "https://static07.vprok.ru/src/product.file/list/image/39/97/159739.jpeg"}]
 }
