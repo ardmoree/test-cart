@@ -21,4 +21,16 @@
     background-color: #8abcef;
     border: 1px solid #babec1;
     border-radius: 4px;
+    transition: transform 0.3s;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.checkoutButton:active {
+    outline: none;
+    transform: scale(0.9);
+}
+
+.checkoutButton:focus {
+    outline: none;
 }

@@ -1,33 +1,31 @@
-import React from "react"
-import "./style.css"
+import React from "react";
+import "./style.css";
 import Input from "../../../UI/Input";
 import { useForm } from "react-hook-form";
+import { addToCart } from "../../../../Store/Actions/actions";
+import { connect } from "react-redux";
 
-const NewItemForm = ({}) => {
-  const { register, handleSubmit, watch, errors } = useForm();
+const NewItemForm = ({ dispatch }) => {
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
-  }
-
-  const handleChange = (data) => {
-    console.log(data.target.value)
-  }
+    dispatch(addToCart(data));
+  };
 
   return (
     <form className={"newItemForm"} onSubmit={handleSubmit(onSubmit)}>
       <div className={"field"}>
-        <Input label={"Name"} register={register} required/>
+        <Input label={"name"} register={register} required />
       </div>
       <div className={"field"}>
-        <Input label={"Quantity"} register={register} required/>
+        <Input label={"quantity"} register={register} required />
       </div>
       <div className={"field"}>
-        <Input label={"Price"} register={register} required/>
+        <Input label={"price"} register={register} required />
       </div>
-      <button >Add new product</button>
+      <button className={"submitButton"}>Add new product</button>
     </form>
-  )
-}
+  );
+};
 
-export default NewItemForm;
+export default connect()(NewItemForm);

@@ -1,28 +1,24 @@
-import React from "react"
-import "./style.css"
+import React from "react";
+import "./style.css";
 
 const Input = ({
-                 label = "",
-                 type = "string",
-                 value = "",
-                 disabled = false,
-                 onChange,
-                 register,
-                 required = false
-               }) => {
+  label = "",
+  type = "string",
+  value = "",
+  disabled = false,
+  register,
+  required = false,
+}) => {
   return (
-    <div className={"input"}>
-      <label>{label}</label>
-      <input
-        name={label}
-        type={type}
-        // value={value}
-        // onChange={onChange}
-        disabled={disabled}
-        ref={register({required})}
-      />
-    </div>
-  )
-}
+    <input
+      className={"input"}
+      placeholder={label}
+      name={label}
+      type={type}
+      disabled={disabled}
+      ref={register({ required })}
+    />
+  );
+};
 
-export default Input
+export default Input;

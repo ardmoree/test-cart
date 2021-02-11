@@ -12,3 +12,22 @@
     flex: 1;
     margin-right: 7px;
 }
+
+.submitButton {
+    background-color: #8abcef;
+    border: 1px solid #babec1;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.submitButton:active {
+    outline: none;
+    transform: scale(0.9);
+}
+
+.submitButton:focus {
+    outline: none;
+}

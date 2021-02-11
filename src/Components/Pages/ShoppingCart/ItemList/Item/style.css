@@ -10,6 +10,7 @@
     width: 170px;
     display: flex;
     justify-content: center;
+    object-fit: contain;
 }
 
 .itemName {
@@ -36,10 +37,18 @@
     width: 40px;
     height: 50px;
     cursor: pointer;
-    background-color: #f1f5f9;
-    border: 1px solid #babec1;
+    border: none;
     border-radius: 4px;
+    transition: transform 0.3s;
+}
 
+.button:active {
+    outline: none;
+    transform: scale(0.9)
+}
+
+.button:focus {
+    outline: none;
 }
 
 .remove {
@@ -65,5 +74,10 @@
 .total {
     margin-top: auto;
     margin-left: auto;
-    /*margin: 0 auto;*/
+}
+
+.noPic {
+    color: #939393;
+    text-align: center;
+    padding-top: 31px;
 }
