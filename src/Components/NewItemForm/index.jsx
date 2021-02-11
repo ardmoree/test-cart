@@ -1,15 +1,18 @@
-import React from "react";
-import "./style.css";
-import Input from "../../../UI/Input";
-import { useForm } from "react-hook-form";
-import { addToCart } from "../../../../Store/Actions/actions";
 import { connect } from "react-redux";
+import { useForm } from "react-hook-form";
+
+import Input from "Components/Input";
+
+import { addToCart } from "Store/Actions/actions";
+
+import "Components/NewItemForm/style.css";
 
 const NewItemForm = ({ dispatch }) => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
     dispatch(addToCart(data));
+    reset();
   };
 
   return (
@@ -18,10 +21,15 @@ const NewItemForm = ({ dispatch }) => {
         <Input label={"name"} register={register} required />
       </div>
       <div className={"field"}>
-        <Input label={"quantity"} register={register} required />
+        <Input
+          type={"number"}
+          label={"quantity"}
+          register={register}
+          required
+        />
       </div>
       <div className={"field"}>
-        <Input label={"price"} register={register} required />
+        <Input type={"number"} label={"price"} register={register} required />
       </div>
       <button className={"submitButton"}>Add new product</button>
     </form>

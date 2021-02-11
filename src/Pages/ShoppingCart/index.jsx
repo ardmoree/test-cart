@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connect, useDispatch } from "react-redux";
-import ItemList from "./ItemList";
-import NewItemForm from "./NewItemForm";
-import Checkout from "./Checkout";
-import { fetchCart } from "../../../Store/Actions/actions";
-import "./style.css";
+
+import ItemList from "Components/ItemList";
+import NewItemForm from "Components/NewItemForm";
+import Checkout from "Components/Checkout";
+import { fetchCart } from "Store/Actions/actions";
+
+import "Pages/ShoppingCart/style.css";
 
 const ShoppingCart = ({ items, loading }) => {
   const dispatch = useDispatch();
@@ -21,7 +23,7 @@ const ShoppingCart = ({ items, loading }) => {
         {!loading && items.length === 0 && (
           <div className={"emptyCart"}>No items in cart</div>
         )}
-        {loading && <div>Loading ...</div>}
+        {loading && <div className={"loading"}>Loading ...</div>}
         <Checkout />
       </div>
       <NewItemForm />

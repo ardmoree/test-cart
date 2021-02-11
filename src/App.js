@@ -1,4 +1,4 @@
-import ShoppingCart from "./Components/Pages/ShoppingCart";
+import ShoppingCart from "Pages/ShoppingCart";
 
 const App = () => {
   return (

@@ -1,13 +1,12 @@
-import "./style.css";
 import { connect } from "react-redux";
-import {
-  changeQuantity,
-  deleteFromCart,
-} from "../../../../../Store/Actions/actions";
+
+import { changeQuantity, deleteFromCart } from "Store/Actions/actions";
+
+import styles from "style.module.css";
 
 const Item = ({ element, item, dispatch }) => {
   const handleDecrement = () => {
-    if (item.quantity > 0) {
+    if (item.quantity > 1) {
       dispatch(
         changeQuantity({ id: element.id, change: -1, price: element.price })
       );

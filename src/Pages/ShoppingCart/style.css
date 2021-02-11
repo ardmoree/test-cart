@@ -29,3 +29,11 @@
     text-align: center;
     padding-top: 40px;
 }
+
+.loading {
+    font-size: 25px;
+    width: 100%;
+    color: #aaaaaa;
+    text-align: center;
+    padding-top: 40px;
+}

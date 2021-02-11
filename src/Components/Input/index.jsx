@@ -1,10 +1,8 @@
-import React from "react";
-import "./style.css";
+import "Components/Input/style.css";
 
 const Input = ({
   label = "",
   type = "string",
-  value = "",
   disabled = false,
   register,
   required = false,
