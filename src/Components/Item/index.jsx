@@ -11,12 +11,12 @@ const Item = ({ element }) => {
 
   const handleDecrement = () => {
       dispatch(
-        changeQuantity({ id: element.id, change: -1, price: element.price })
+        changeQuantity({ id: element.id, change: -1 })
       );
   };
   const handleIncrement = () => {
     dispatch(
-      changeQuantity({ id: element.id, change: 1, price: element.price })
+      changeQuantity({ id: element.id, change: 1 })
     );
   };
 

@@ -13,7 +13,6 @@ describe("Cart reducer", () => {
       reducer(
         {
           ...initialState,
-          total: 240,
           cartItems: [
             {
               id: 1,
@@ -25,11 +24,10 @@ describe("Cart reducer", () => {
             },
           ],
         },
-        { type: CHANGE_QUANTITY, payload: { change: 1, id: 1, price: 30 } }
+        { type: CHANGE_QUANTITY, payload: { change: 1, id: 1 } }
       )
     ).toEqual({
       ...initialState,
-      total: "270.00",
       cartItems: [
         {
           id: 1,
@@ -47,7 +45,6 @@ describe("Cart reducer", () => {
       reducer(
         {
           ...initialState,
-          total: 240,
           cartItems: [
             {
               id: 1,
@@ -59,11 +56,10 @@ describe("Cart reducer", () => {
             },
           ],
         },
-        { type: CHANGE_QUANTITY, payload: { change: -1, id: 1, price: 30 } }
+        { type: CHANGE_QUANTITY, payload: { change: -1, id: 1 } }
       )
     ).toEqual({
       ...initialState,
-      total: "210.00",
       cartItems: [
         {
           id: 1,
@@ -93,7 +89,6 @@ describe("Cart reducer", () => {
       })
     ).toEqual({
       ...initialState,
-      total: "210.00",
       cartItems: [
         {
           id: 1,
@@ -129,7 +124,6 @@ describe("Cart reducer", () => {
       })
     ).toEqual({
       ...initialState,
-      total: "210.00",
       cartItems: [
         {
           id: expect.any(Number),
@@ -158,8 +152,8 @@ describe("Cart reducer", () => {
             },
           ],
         },
-        { type: DELETE_FROM_CART, payload: { id: 1, price: 30, quantity: 7 } }
+        { type: DELETE_FROM_CART, payload: { id: 1 } }
       )
-    ).toEqual({ ...initialState, total: "-210.00", cartItems: [] });
+    ).toEqual({ ...initialState, cartItems: [] });
   });
 });
