@@ -1,15 +1,14 @@
 import Item from "Components/Item";
 
-import "Components/ItemList/style.css";
+import styles from  "./style.module.css";
 
-const ItemList = ({ items }) => {
-  return (
-    <div className={"itemList"}>
+const ItemList = ({ items }) => (
+    <div className={styles.itemList}>
       {items.map((item) => (
         <Item key={item.id} element={item} />
       ))}
     </div>
-  );
-};
+);
+
 
 export default ItemList;

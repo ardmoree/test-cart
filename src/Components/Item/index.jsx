@@ -1,16 +1,18 @@
-import { connect } from "react-redux";
+import {useDispatch} from "react-redux";
 
 import { changeQuantity, deleteFromCart } from "Store/Actions/actions";
 
-import styles from "style.module.css";
+import styles from "./style.module.css";
 
-const Item = ({ element, item, dispatch }) => {
+const Item = ({ element }) => {
+  const dispatch = useDispatch()
+
+  const hasImage = !!element.pic
+
   const handleDecrement = () => {
-    if (item.quantity > 1) {
       dispatch(
         changeQuantity({ id: element.id, change: -1, price: element.price })
       );
-    }
   };
   const handleIncrement = () => {
     dispatch(
@@ -21,40 +23,37 @@ const Item = ({ element, item, dispatch }) => {
   const handleDelete = () => {
     dispatch(
       deleteFromCart({
-        id: element.id,
-        quantity: item.quantity,
-        price: element.price,
+        id: element.id
       })
     );
   };
 
   return (
-    <div className={"item"}>
-      <div className={"imgContainer"}>
-        {element.pic && <img src={element.pic} alt={""} />}
-        {!element.pic && (
-          <div className={"noPic"}>Image will be added shortly</div>
-        )}
+    <div className={styles.item}>
+      <div className={styles.imgContainer}>
+        {hasImage
+          ? <img src={element.pic} alt={""} />
+          : <div className={styles.noPic}>Image will be added shortly</div>}
       </div>
-      <div className={"itemName"}>{element.name}</div>
-      <div className={"rightSide"}>
-        <div className={"controls"}>
+      <div className={styles.itemName}>{element.name}</div>
+      <div className={styles.rightSide}>
+        <div className={styles.controls}>
           <button
-            className={"button"}
+            className={styles.button}
             onClick={handleDecrement}
-            disabled={item.quantity <= 0}
+            disabled={element.quantity <= 1}
           >
             -
           </button>
-          <div className={"counter"}>{item.quantity}</div>
-          <button className={"button"} onClick={handleIncrement}>
+          <div className={styles.counter}>{element.quantity}</div>
+          <button className={styles.button} onClick={handleIncrement}>
             +
           </button>
         </div>
-        <div className={"total"}>
-          ${(item.quantity * element.price).toFixed(2)}
+        <div className={styles.total}>
+          ${(element.quantity * element.price).toFixed(2)}
         </div>
-        <button className={"remove"} onClick={handleDelete}>
+        <button className={styles.remove} onClick={handleDelete}>
           Remove
         </button>
       </div>
@@ -62,6 +61,4 @@ const Item = ({ element, item, dispatch }) => {
   );
 };
 
-export default connect((store, props) => ({
-  item: store.cartItems.find((el) => el.id === props.element.id),
-}))(Item);
+export default Item;

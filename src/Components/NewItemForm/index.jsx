@@ -1,14 +1,16 @@
-import { connect } from "react-redux";
+import {useDispatch} from "react-redux";
 import { useForm } from "react-hook-form";
 
 import Input from "Components/Input";
 
 import { addToCart } from "Store/Actions/actions";
 
-import "Components/NewItemForm/style.css";
+import styles from "./style.module.css";
 
-const NewItemForm = ({ dispatch }) => {
+const NewItemForm = () => {
   const { register, handleSubmit, reset } = useForm();
+
+  const dispatch = useDispatch()
 
   const onSubmit = (data) => {
     dispatch(addToCart(data));
@@ -16,11 +18,11 @@ const NewItemForm = ({ dispatch }) => {
   };
 
   return (
-    <form className={"newItemForm"} onSubmit={handleSubmit(onSubmit)}>
-      <div className={"field"}>
+    <form className={styles.newItemForm} onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.field}>
         <Input label={"name"} register={register} required />
       </div>
-      <div className={"field"}>
+      <div className={styles.field}>
         <Input
           type={"number"}
           label={"quantity"}
@@ -28,12 +30,12 @@ const NewItemForm = ({ dispatch }) => {
           required
         />
       </div>
-      <div className={"field"}>
+      <div className={styles.field}>
         <Input type={"number"} label={"price"} register={register} required />
       </div>
-      <button className={"submitButton"}>Add new product</button>
+      <button className={styles.submitButton}>Add new product</button>
     </form>
   );
-};
+}
 
-export default connect()(NewItemForm);
+export default NewItemForm;

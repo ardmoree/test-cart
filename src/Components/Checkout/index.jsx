@@ -1,17 +1,18 @@
-import { connect } from "react-redux";
+import {useSelector} from "react-redux";
 
-import styles from "style.module.css";
+import styles from "./style.module.css";
+import {getTotalPrice} from 'Store/Selectors/selectors';
 
-const Checkout = ({ total }) => {
+const Checkout = () => {
+  const total = useSelector(getTotalPrice)
+
   return (
     <div className={styles.checkout}>
       <div className={styles.checkoutTotal}>Total:</div>
-      <div className={styles.number}>${total}</div>
+      <div className={styles.number}>${total.toFixed(2)}</div>
       <button className={styles.checkoutButton}>CHECKOUT</button>
     </div>
-  );
+  )
 };
 
-export default connect((store) => ({
-  total: store.total,
-}))(Checkout);
+export default Checkout;

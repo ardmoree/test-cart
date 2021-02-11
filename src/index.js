@@ -1,13 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import App from "./App";
-import store from "./Store/store";
+import {render} from 'react-dom';
+import {Router} from "router";
 import "normalize.css";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+render(<Router/>, document.getElementById('root'));

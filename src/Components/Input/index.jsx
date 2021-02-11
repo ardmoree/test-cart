@@ -1,4 +1,4 @@
-import "Components/Input/style.css";
+import styles from "./style.module.css";
 
 const Input = ({
   label = "",
@@ -6,10 +6,9 @@ const Input = ({
   disabled = false,
   register,
   required = false,
-}) => {
-  return (
+}) => (
     <input
-      className={"input"}
+      className={styles.input}
       placeholder={label}
       name={label}
       type={type}
@@ -17,6 +16,6 @@ const Input = ({
       ref={register({ required })}
     />
   );
-};
+;
 
 export default Input;
