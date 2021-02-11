@@ -4,15 +4,12 @@ import axios from "axios";
 
 function* fetchNews() {
   yield put(toggleCartLoading(true));
-  const response = yield fetch(`./server/db.json`, {
+  const response = yield fetch(`/server/db.json`, {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
   }).then((res) => res.json());
-  // const response = yield axios
-  //   .get(`${window.location.origin}/public/db.json`)
-  //   .then((res) => res.json());
   yield put(toggleCartLoading(false));
   yield put(setCart(response.items));
 }

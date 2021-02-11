@@ -28,8 +28,7 @@ export default function (state = initialState, action) {
     case ADD_TO_CART:
       const newItem = {
         ...action.payload,
-        // pic:
-        //   "https://icons.iconarchive.com/icons/papirus-team/papirus-status/512/image-missing-icon.png",
+        id: Math.random(),
       };
       return {
         ...state,
