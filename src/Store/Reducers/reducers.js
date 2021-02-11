@@ -6,7 +6,7 @@ import {
   CART_LOADING_TOGGLE,
 } from "../Actions/actions";
 
-const initialState = {
+export const initialState = {
   cartItems: [],
   cartLoading: false,
   total: 0,

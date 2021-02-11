@@ -4,7 +4,7 @@ import axios from "axios";
 
 function* fetchNews() {
   yield put(toggleCartLoading(true));
-  const response = yield fetch(`/server/db.json`, {
+  const response = yield fetch(`./server/db.json`, {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",
