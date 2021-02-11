@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 const Checkout = ({ element, total }) => {
   return (
     <div className={"checkout"}>
-      <div className={"checkoutTotal"}>Total: ${total}</div>
+      <div className={"checkoutTotal"}>Total:</div>
+      <div className={"number"}>${total}</div>
       <button className={"checkoutButton"}>CHECKOUT</button>
     </div>
   );

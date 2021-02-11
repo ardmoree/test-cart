@@ -34,7 +34,7 @@ const Item = ({ element, item, dispatch }) => {
       <div className={"imgContainer"}>
         {element.pic && <img src={element.pic} alt={""} />}
         {!element.pic && (
-          <div className={"noPic"}>Picture will be added shortly</div>
+          <div className={"noPic"}>Image will be added shortly</div>
         )}
       </div>
       <div className={"itemName"}>{element.name}</div>
@@ -53,7 +53,7 @@ const Item = ({ element, item, dispatch }) => {
           </button>
         </div>
         <div className={"total"}>
-          Total: ${(item.quantity * element.price).toFixed(2)}
+          ${(item.quantity * element.price).toFixed(2)}
         </div>
         <button className={"remove"} onClick={handleDelete}>
           Remove

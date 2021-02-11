@@ -18,7 +18,9 @@ const ShoppingCart = ({ items, loading }) => {
       <div className={"header"}>SHOPPING CART</div>
       <div className={"midSection"}>
         {items.length > 0 && !loading && <ItemList items={items} />}
-        {!loading && items.length === 0 && <div>No items in cart</div>}
+        {!loading && items.length === 0 && (
+          <div className={"emptyCart"}>No items in cart</div>
+        )}
         {loading && <div>Loading ...</div>}
         <Checkout />
       </div>

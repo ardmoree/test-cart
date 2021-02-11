@@ -16,6 +16,7 @@
 .itemName {
     margin: 0 auto 0 20px;
     font-size: 1.5em;
+    color: #7f7979;
 }
 
 .rightSide {
@@ -74,6 +75,7 @@
 .total {
     margin-top: auto;
     margin-left: auto;
+    color: #7f7979;
 }
 
 .noPic {

@@ -1,18 +1,8 @@
 .shoppingCart {
     background-color: #edf3f9;
-    /*box-sizing: border-box;*/
-    /*width: 100%;*/
     min-height: 750px;
     padding-bottom: 30px;
-    /*min-height: 800px;*/
-    /*height: 100%;*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*flex: 1;*/
-    /*border-radius: 4px;*/
-    /*padding: 15px 10px;*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
+    height: 100%;
 }
 
 .header {
@@ -31,5 +21,12 @@
     justify-content: space-between;
     max-width: 800px;
     margin: 0 auto;
-    /*margin-bottom: 40px;*/
+}
+
+.emptyCart {
+    font-size: 25px;
+    width: 100%;
+    color: #d98585;
+    text-align: center;
+    padding-top: 40px;
 }
